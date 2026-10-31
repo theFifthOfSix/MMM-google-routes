@@ -7,7 +7,7 @@
  * ComputeRoutes request. See the notes following this file for differences.
  */
 
-Module.register("MMM-google-route", {
+Module.register("MMM-google-routes", {
   defaults: {
     key: "api_key",
     height: "300px",
@@ -338,7 +338,7 @@ Module.register("MMM-google-route", {
         .catch((error) => {
           clearInfo();
           addError("Unable to retrieve route: " + error.message);
-          console.error("MMM-google-route Routes API request failed:", error);
+          console.error("MMM-google-routes Routes API request failed:", error);
         });
     }
 
@@ -399,7 +399,7 @@ Module.register("MMM-google-route", {
   },
 
   notificationReceived: function (notification, payload) {
-    if (notification === "MMM-google-route/refresh") {
+    if (notification === "MMM-google-routes/refresh") {
       this.getDirections();
       return;
     }
