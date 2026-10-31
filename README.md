@@ -1,9 +1,9 @@
-# MMM-google-route
+# MMM-google-routes
 
-![Alt text](/screenshot.png "A preview of the MMM-google-route module.")
+Note: ChatGPT is responsible for the rewrite of this module to convert from using Google Directions
+API to using Google Routes API. It works, but I can't take the credit. :) -tFoS
 
-Note: ChatGPT is reponsible for the rewrite of this module to convert from using Google Directions
-API to using Google Routes API. It works, but I can't take credit (or blame). :)
+![Alt text](/screenshot.png "A preview of the MMM-google-routes module.")
 
 A module for the [MagicMirror²](https://github.com/MichMich/MagicMirror/) that displays the two best
 routes from an origin to a destination, using Google Directions API.
@@ -20,7 +20,7 @@ var config = {
     modules: [
 
         {
-            module: 'MMM-google-route',
+            module: 'MMM-google-routes',
             position: 'top_left',
             config: {
                 key: '<YOUR_KEY>',
@@ -82,14 +82,14 @@ This is due to the `departureTime` field of the [drivingOptions](https://develop
 You can use the [MMM-ModuleScheduler](https://github.com/ianperrin/MMM-ModuleScheduler) module to trigger route updates using a certain schedule.<br>
 This may be useful for example to refresh the route more frequently in the morning and less frequently during the rest of the day, reducing the risk of exceeding the [query limit](https://developers.google.com/maps/documentation/directions/usage-and-billing#standard-usage-limits-and-billing) set by google.
 
-Just set "MMM-google-route/refresh" as the notification id in the `notification_schedule` [configuration parameter](https://github.com/ianperrin/MMM-ModuleScheduler#scheduling-notifications) of the module, e.g.
+Just set "MMM-google-routes/refresh" as the notification id in the `notification_schedule` [configuration parameter](https://github.com/ianperrin/MMM-ModuleScheduler#scheduling-notifications) of the module, e.g.
 ```js
     {
         module: 'MMM-ModuleScheduler',
         config: {
             notification_schedule: [
                 // Refresh the route every minute from 7:00 AM to 8:00 AM, monday to friday
-                { notification: 'MMM-google-route/refresh', schedule: '* 7 * * 1-5' }
+                { notification: 'MMM-google-routes/refresh', schedule: '* 7 * * 1-5' }
             ]
         }
     },
