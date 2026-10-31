@@ -2,6 +2,9 @@
 
 ![Alt text](/screenshot.png "A preview of the MMM-google-route module.")
 
+Note: ChatGPT is reponsible for the rewrite of this module to convert from using Google Directions
+API to using Google Routes API. It works, but I can't take credit (or blame). :)
+
 A module for the [MagicMirror²](https://github.com/MichMich/MagicMirror/) that displays the two best
 routes from an origin to a destination, using Google Directions API.
 
